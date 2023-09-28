@@ -23,7 +23,6 @@ class LRP:
         self.model.eval()
 
     def generate_LRP(self, input, index=None, method="transformer_attribution", is_ablation=False, start_layer=0):
-        model = self.model.get_vit()
         output = model(input).logits
         kwargs = {"alpha": 1}
         if index == None:
